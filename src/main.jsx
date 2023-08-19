@@ -16,6 +16,7 @@ const router = createBrowserRouter([
         element: <Index/>
       },
       {
+       
         path: "/clientes/nuevo",
         element: <NuevoCliente/>
       }
