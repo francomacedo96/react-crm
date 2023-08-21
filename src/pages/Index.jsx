@@ -1,5 +1,19 @@
+import { useLoaderData } from "react-router-dom"
+
+export function loader() {
+
+
+
+  return "desde loader"
+}
 
 function Index() {
+
+
+  const datos = useLoaderData()
+
+
+
   return (
     <>
     
