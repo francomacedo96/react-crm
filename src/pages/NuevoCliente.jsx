@@ -1,5 +1,20 @@
-import { useNavigate } from "react-router-dom"
+import { useNavigate, Form } from "react-router-dom"
 import Formulario from "../components/Forumulario"
+
+export async function action({ request }) {
+  const formData = await request.formData()
+
+  return (
+
+    <>      
+    {
+      console.log(formData)
+    }
+    </>
+
+  )
+
+}
 
 function NuevoCliente() {
 
@@ -22,12 +37,14 @@ function NuevoCliente() {
 
 
       <div className="bg-white shadow rounded-md md:w-3/4 mx-auto px-5 py-10 mt-15">
-        <form>
+        <Form
+          method="post"
+        >
 
           <Formulario />
 
           <input type="submit" value="registrar cliente" className="mt-5 w-full bg-blue-800 p-3 text-white text-lg uppercase font-bold" />
-        </form>
+        </Form>
       </div>
 
     </>
