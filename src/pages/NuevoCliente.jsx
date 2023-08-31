@@ -1,5 +1,6 @@
-import { useNavigate, Form } from "react-router-dom"
+import { useNavigate, Form, useActionData } from "react-router-dom"
 import Formulario from "../components/Forumulario"
+import Error from "../components/Error"
 
 export async function action({ request }) {
   const formData = await request.formData()
@@ -14,8 +15,8 @@ export async function action({ request }) {
 
   // retornar
   if (Object.keys(errores).length) {
-    console.log("si hay errores")
-  }
+    return errores
+  } 
 
   return (
 
@@ -35,6 +36,9 @@ export async function action({ request }) {
 function NuevoCliente() {
 
   const navigate = useNavigate()
+  const errores = useActionData()
+
+  console.log(errores)
 
   return (
 
@@ -53,6 +57,9 @@ function NuevoCliente() {
 
 
       <div className="bg-white shadow rounded-md md:w-3/4 mx-auto px-5 py-10 mt-15">
+        
+        {errores?.length && errores.map( (error, i) => <Error  key={i}> {error} </Error> )}
+        
         <Form
           method="post"
         >
