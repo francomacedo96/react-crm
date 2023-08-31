@@ -3,13 +3,29 @@ import Formulario from "../components/Forumulario"
 
 export async function action({ request }) {
   const formData = await request.formData()
+  const datos = Object.fromEntries(formData)
+
+  //validacion 
+  const errores = []
+
+  if (Object.values(datos).includes("")) {
+    errores.push("todos los cambios son obligatorios")
+  }
+
+  // retornar
+  if (Object.keys(errores).length) {
+    console.log("si hay errores")
+  }
 
   return (
 
-    <>      
-    {
-      console.log(formData)
-    }
+    <>
+      {
+        /*
+        console.log(datos),
+        console.log(errores)
+        */
+      }
     </>
 
   )
