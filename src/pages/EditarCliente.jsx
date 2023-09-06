@@ -82,7 +82,7 @@ function EditarCliente() {
               cliente={cliente}
           />
 
-          <input type="submit" value="registrar cliente" className="mt-5 w-full bg-blue-800 p-3 text-white text-lg uppercase font-bold" />
+          <input type="submit" value="Guardar cambio" className="mt-5 w-full bg-blue-800 p-3 text-white text-lg uppercase font-bold" />
         </Form>
       </div>
 
