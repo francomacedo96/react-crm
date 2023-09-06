@@ -13,7 +13,7 @@ export default function ErrorPage( ) {
 
             <h1 className="text-center"> Hay un error </h1>
 
-            <h1 className="text-center"> {error.message} </h1>
+            <h1 className="text-center"> {error.statusText || error.message} </h1>
 
         </div>
 
