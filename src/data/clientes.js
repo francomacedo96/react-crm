@@ -32,3 +32,7 @@ export async function agregarCliente(datos) {
     }
 
 }
+
+export async function actualizarCliente(id, datos) {
+    
+}
